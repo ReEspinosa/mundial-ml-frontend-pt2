@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-const API_URL = 'https://mundial-ml-backend.onrender.com/api/contacto';
+const API_URL = 'https://mundial-ml-backend-pt2.onrender.com/api/contacto';
 export default function Support() {
   const [form, setForm] = useState({nombre:'',email:'',tipo:'Comentario',mensaje:''});
   const [status, setStatus] = useState(null);
