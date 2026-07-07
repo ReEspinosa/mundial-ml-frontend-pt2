@@ -6,7 +6,8 @@ export default function Home() {
       <h1>Fase de grupos <span>interactiva</span></h1>
       <p>Predicciones generadas con modelos de Machine Learning. Un ejercicio académico para explorar cómo la ciencia de datos intenta descifrar el deporte más impredecible del mundo.</p>
       <div style={{marginTop:'1.5rem',display:'flex',gap:'1rem',justifyContent:'center',flexWrap:'wrap'}}>
-        <Link to="/resultados/jun22" className="btn btn-accent">Ver predicciones</Link>
+       <Link to="/resultados/jun22" className="btn btn-accent">Ver fase de grupos</Link>
+       <Link to="/resultados2/jul05" className="btn btn-accent">Ver eliminación directa</Link>
         <Link to="/como-probar" className="btn btn-outline">Probar el código</Link>
         <Link to="/curso" className="btn btn-outline">Mini-curso de ML</Link>
       </div>

@@ -11,6 +11,7 @@ import MatchDetailKO from './pages/MatchDetailKO';
 import Support from './pages/Support';
 import Curso from './pages/Curso';
 import LessonDetail from './pages/LessonDetail';
+
 export default function App() {
   const [accepted, setAccepted] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function App() {
     {!accepted && <Disclaimer onAccept={handleAccept} />}
     <div className="app-layout">
       <button className="mobile-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>|||</button>
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <main className="main-content">
         <Routes>
