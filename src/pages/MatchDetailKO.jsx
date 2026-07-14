@@ -29,7 +29,9 @@ export default function MatchDetailKO() {
     <div className="match-disclaimer"><strong>Aviso:</strong> Las predicciones son estimaciones generadas por modelos estadísticos con fines exclusivamente académicos y de entretenimiento. La precisión es limitada debido a la aleatoriedad del fútbol. No se recomienda utilizar esta información como base para tomar decisiones que impliquen riesgo financiero.</div>
     <div className="data-note"><strong>Nota:</strong> Los datos pueden cambiar según los resultados de partidos anteriores.</div>
 
-    {GRAPH_INFO.map(g => (
+    const info = match.graphInfo || GRAPH_INFO;
+
+    {info.map(g => (
       <div className="graph-section" key={g.key}>
         <h2>{g.title}</h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '1rem' }}>{g.description}</p>

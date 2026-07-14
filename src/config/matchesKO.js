@@ -5,6 +5,7 @@ export const DAYS_KO = [
   { id: 'jul06', label: 'Lun 6', full: 'Lunes 6 de julio' },
   { id: 'jul07', label: 'Mar 7', full: 'Martes 7 de julio' },
   { id: 'jul09', label: 'Jue 9', full: 'Jueves 9 de julio' },
+  { id: 'jul14', label: 'Mar 14', full: 'Martes 14 de julio' },
 ];
 
 export const MATCHES_KO = [
@@ -134,6 +135,31 @@ export const MATCHES_KO = [
     },
     colabLink: 'https://drive.google.com/file/d/110lne6aqhRgvkClExe-cKEckYBgyEyVM/view?usp=sharing',
   },
+
+  {
+    id: 'fra-esp', day: 'jul14',
+    homeCode: 'fr', awayCode: 'es',
+    home: 'Francia', away: 'España',
+    group: 'Semifinal',
+    time: '3:00 PM ET',
+    venue: 'AT&T Stadium, Arlington (Dallas)',
+    graphs: {
+      mcmc:      '/graphs/jul14/mcmc.png',
+      xgboost:   '/graphs/jul14/xgboost.png',
+      modelo3:   '/graphs/jul14/mejorado.png',
+      accuracy:  '/graphs/jul14/accuracy.png',
+      consenso:  '/graphs/jul14/consenso.png',
+    },
+    graphInfo: [
+      { key: 'mcmc', title: '1. Bayesiano MCMC', description: 'Usa cadenas de Montecarlo sobre una distribución de Poisson para estimar la probabilidad de cada marcador. Te dice qué tan probable es cada resultado combinando el historial de ambas selecciones.' },
+      { key: 'xgboost', title: '2. XGBoost Poisson', description: 'Modelo de machine learning (gradient boosting) que predice goles esperados con objetivo Poisson, alimentado por ratings Elo y forma reciente.' },
+      { key: 'modelo3', title: '3. Dixon-Coles mejorado', description: 'Versión reforzada del modelo estadístico clásico con ajustes de calibración adicionales. Combina la robustez del enfoque paramétrico con mejor comportamiento en marcadores bajos.' },
+      { key: 'accuracy', title: '4. Accuracy y RPS de los 3 modelos', description: 'Compara qué tan bien acertó cada modelo el resultado (1X2) y qué tan calibradas están sus probabilidades (RPS) en los partidos de 2026.' },
+      { key: 'consenso', title: '5. Consenso de los 3 modelos', description: 'Combina las probabilidades de los 3 modelos en una sola distribución. Es la mejor estimación cuando los modelos individuales no coinciden del todo.' },
+    ],
+    colabLink: 'https://colab.research.google.com/drive/TU_LINK_AQUI?usp=sharing',
+  },
+
 ];
 
 export function getKOMatchesByDay(dayId) { return MATCHES_KO.filter(m => m.day === dayId); }
