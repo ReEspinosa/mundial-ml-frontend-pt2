@@ -9,12 +9,14 @@ export default function MatchDetailKO() {
   const { matchId } = useParams();
   const match = getKOMatchById(matchId);
   if (!match) return (
-    <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
-      <h2>Partido no encontrado</h2>
-      <Link to="/" className="btn btn-outline" style={{ marginTop: '1rem' }}>Volver al inicio</Link>
-    </div>
+      <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
+        <h2>Partido no encontrado</h2>
+        <Link to="/" className="btn btn-outline" style={{ marginTop: '1rem' }}>Volver al inicio</Link>
+      </div>
   );
   const day = DAYS_KO.find(d => d.id === match.day);
+  const info = match.graphInfo || GRAPH_INFO;
+
   return (<div>
     <div className="ficha">
       <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Ficha técnica</div>
@@ -29,14 +31,12 @@ export default function MatchDetailKO() {
     <div className="match-disclaimer"><strong>Aviso:</strong> Las predicciones son estimaciones generadas por modelos estadísticos con fines exclusivamente académicos y de entretenimiento. La precisión es limitada debido a la aleatoriedad del fútbol. No se recomienda utilizar esta información como base para tomar decisiones que impliquen riesgo financiero.</div>
     <div className="data-note"><strong>Nota:</strong> Los datos pueden cambiar según los resultados de partidos anteriores.</div>
 
-    const info = match.graphInfo || GRAPH_INFO;
-
     {info.map(g => (
-      <div className="graph-section" key={g.key}>
-        <h2>{g.title}</h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '1rem' }}>{g.description}</p>
-        <GraphImage src={match.graphs[g.key]} alt={`${g.title} — ${match.home} vs ${match.away}`} />
-      </div>
+        <div className="graph-section" key={g.key}>
+          <h2>{g.title}</h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '1rem' }}>{g.description}</p>
+          <GraphImage src={match.graphs[g.key]} alt={`${g.title} — ${match.home} vs ${match.away}`} />
+        </div>
     ))}
 
     <div style={{ textAlign: 'center', margin: '2.5rem 0' }}>

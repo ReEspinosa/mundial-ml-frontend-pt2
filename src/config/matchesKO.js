@@ -157,7 +157,7 @@ export const MATCHES_KO = [
       { key: 'accuracy', title: '4. Accuracy y RPS de los 3 modelos', description: 'Compara qué tan bien acertó cada modelo el resultado (1X2) y qué tan calibradas están sus probabilidades (RPS) en los partidos de 2026.' },
       { key: 'consenso', title: '5. Consenso de los 3 modelos', description: 'Combina las probabilidades de los 3 modelos en una sola distribución. Es la mejor estimación cuando los modelos individuales no coinciden del todo.' },
     ],
-    colabLink: 'https://colab.research.google.com/drive/TU_LINK_AQUI?usp=sharing',
+    colabLink: 'https://colab.research.google.com/drive/1IbPsTr-xQChZEQcrl8eZVMZqXy0kOT-i?usp=sharing',
   },
 
 ];
